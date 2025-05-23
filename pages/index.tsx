@@ -57,7 +57,7 @@ export default function Home() {
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
         </style>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/va.png" />
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
       </Head>
 
