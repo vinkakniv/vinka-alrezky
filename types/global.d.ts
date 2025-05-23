@@ -25,7 +25,9 @@ declare global {
         src?: string;
         alt?: string;
         'auto-rotate'?: boolean;
-        // add other attributes you use, e.g. camera-controls, style, etc.
+        'camera-controls'?: boolean;
+        'shadow-intensity'?: string | number;
+        style?: React.CSSProperties;
       };
     }
     
