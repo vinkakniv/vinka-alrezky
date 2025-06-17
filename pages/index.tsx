@@ -91,6 +91,11 @@ export default function Home() {
           <ContactForm />
         </section>
       </main>
+      <footer className="w-full py-6 text-center border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-black">
+        <span className="text-sm text-gray-500 dark:text-gray-400">
+          &copy; 2025 Vinka Alrezky As. All rights reserved.
+        </span>
+      </footer>
     </div>
   );
 }
