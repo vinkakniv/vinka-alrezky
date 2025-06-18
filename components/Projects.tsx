@@ -16,116 +16,119 @@ import kripto from "../public/kripto.png";
 
 export default function Projects() {
   return (
-    <section>
-      <div>
-        <h3 className="text-3xl py-10 font-bold opacity-60 dark:text-white dark:opacity-100">
-          Highlighted Project
-        </h3>
-        <p className="text-sm py-2 text-gray-400 leading-6">
-          A showcase of my most significant project, demonstrating my expertise in full-stack development, 
-          security implementation, and product ownership.
-        </p>
-      </div>
-      <div className="max-w-4xl mx-auto">
-        <ProjectCard
-          image={pantautular}
-          title="PantauTular – Infectious Disease Monitoring in Indonesia"
-          description="An infectious disease monitoring platform developed in collaboration with BRIN (Badan Riset dan Inovasi Nasional). 
-            Led development of core features to monitor and visualize infectious disease data across Indonesia."
-          features={[
-            "Full Stack Development",
-            "Product Ownership",
-            "Scrum Management",
-            "Stakeholder Collaboration"
-          ]}
-          links={[
-            { icon: <SiNetlify className="text-xl" />, text: "Live Demo", href: "https://pantautular.netlify.app/" },
-            { icon: <AiFillGithub className="text-xl" />, text: "Source Code", href: "https://github.com/PPL-BRIN" }
-          ]}
-        />
-      </div>
+    <section className="py-20">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h3 className="text-3xl py-10 font-bold text-black dark:text-white">
+            Highlighted Project
+          </h3>
+          <p className="text-sm py-2 text-black dark:text-gray-400 leading-7 md:text-lg max-w-3xl mx-auto">
+            A showcase of my projects, demonstrating my skills and passion for creating innovative solutions.
+          </p>
+        </div>
+        
+        <div className="max-w-5xl mx-auto">
+          <ProjectCard
+            image={pantautular}
+            title="PantauTular – Infectious Disease Monitoring in Indonesia"
+            description="An infectious disease monitoring platform developed in collaboration with BRIN (Badan Riset dan Inovasi Nasional). 
+              Led development of core features to monitor and visualize infectious disease data across Indonesia."
+            features={[
+              "Full Stack Development",
+              "Product Ownership",
+              "Scrum Management",
+              "Stakeholder Collaboration"
+            ]}
+            links={[
+              { icon: <SiNetlify className="text-xl" />, text: "Live Demo", href: "https://pantautular.netlify.app/" },
+              { icon: <AiFillGithub className="text-xl" />, text: "Source Code", href: "https://github.com/PPL-BRIN" }
+            ]}
+          />
+        </div>
 
-      <div>
-        <h3 className="text-3xl py-5 font-bold opacity-60 dark:text-white dark:opacity-100">
-          Other Projects
-        </h3>
-        <p className="text-sm py-2 text-gray-400 leading-6">
-          Additional projects showcasing my diverse skills in web development, 
-          mobile app development, and system architecture.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <OtherProjectCard
-          image={kripto}
-          title="Cryptographic File Security – RSA Encryption"
-          description="A secure file encryption and decryption application implementing RSA with OAEP padding, 
-            SHA-256 hashing, and user-friendly GUI."
-          links={[
-            { icon: <AiFillGithub className="text-xl" />, text: "View Source Code", href: "https://github.com/vinkakniv/tk-kripto" }
-          ]}
-        />
+        <div className="text-center mt-20 mb-12">
+          <h3 className="text-3xl py-5 font-bold text-black dark:text-white">
+            Other Projects
+          </h3>
+          <p className="text-sm py-2 text-black dark:text-gray-400 leading-7 md:text-lg max-w-3xl mx-auto">
+            Additional projects showcasing my diverse skills in web development, 
+            mobile app development, and system architecture.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <OtherProjectCard
+            image={kripto}
+            title="Cryptographic File Security – RSA Encryption"
+            description="A secure file encryption and decryption application implementing RSA with OAEP padding, 
+              SHA-256 hashing, and user-friendly GUI."
+            links={[
+              { icon: <AiFillGithub className="text-xl" />, text: "View Source Code", href: "https://github.com/vinkakniv/tk-kripto" }
+            ]}
+          />
 
-        <OtherProjectCard
-          image={leci}
-          title="LeCI – Secure Vehicle Rental with OWASP Standards"
-          description="A secure rental vehicle application with integrated authentication and authorization mechanisms, 
-            following OWASP security standards."
-          links={[
-            { icon: <AiOutlineLink className="text-xl" />, text: "Visit Website", href: "https://kelompok-22-leci-fe.pkpl.cs.ui.ac.id/" }
-          ]}
-        />
+          <OtherProjectCard
+            image={leci}
+            title="LeCI – Secure Vehicle Rental with OWASP Standards"
+            description="A secure rental vehicle application with integrated authentication and authorization mechanisms, 
+              following OWASP security standards."
+            links={[
+              { icon: <AiOutlineLink className="text-xl" />, text: "Visit Website", href: "https://kelompok-22-leci-fe.pkpl.cs.ui.ac.id/" }
+            ]}
+          />
 
-        <OtherProjectCard
-          image={bookmate}
-          title="BookMate – A Book-Based Matchmaking Platform"
-          description="Innovative dating application matching users based on book preferences. 
-            Developed web platform using Django and mobile app with Flutter."
-          links={[
-            { icon: <AiOutlineYoutube className="text-xl" />, text: "Promotion Video", href: "https://youtu.be/PH2QZHv4Ocw?si=6S5Cn9NO_8JFUP-P" },
-            { icon: <AiFillGithub className="text-xl" />, text: "Mobile App", href: "https://github.com/PBP-A12/bookmate-finals" },
-            { icon: <AiFillGithub className="text-xl" />, text: "Web App", href: "https://github.com/PBP-A12/bookmate-midterm" }
-          ]}
-        />
+          <OtherProjectCard
+            image={bookmate}
+            title="BookMate – A Book-Based Matchmaking Platform"
+            description="Innovative dating application matching users based on book preferences. 
+              Developed web platform using Django and mobile app with Flutter."
+            links={[
+              { icon: <AiOutlineYoutube className="text-xl" />, text: "Promotion Video", href: "https://youtu.be/PH2QZHv4Ocw?si=6S5Cn9NO_8JFUP-P" },
+              { icon: <AiFillGithub className="text-xl" />, text: "Mobile App", href: "https://github.com/PBP-A12/bookmate-finals" },
+              { icon: <AiFillGithub className="text-xl" />, text: "Web App", href: "https://github.com/PBP-A12/bookmate-midterm" }
+            ]}
+          />
 
-        <OtherProjectCard
-          image={bukuid}
-          title="Buku.ID – E-Commerce for Book Enthusiasts"
-          description="E-commerce platform built with Spring Boot and GCP. 
-            Implemented cart and checkout functionalities with focus on software design patterns."
-          links={[
-            { icon: <AiFillGithub className="text-xl" />, text: "View Source Code", href: "https://github.com/TK-Advance-Programming-A7" }
-          ]}
-        />
+          <OtherProjectCard
+            image={bukuid}
+            title="Buku.ID – E-Commerce for Book Enthusiasts"
+            description="E-commerce platform built with Spring Boot and GCP. 
+              Implemented cart and checkout functionalities with focus on software design patterns."
+            links={[
+              { icon: <AiFillGithub className="text-xl" />, text: "View Source Code", href: "https://github.com/TK-Advance-Programming-A7" }
+            ]}
+          />
 
-        <OtherProjectCard
-          image={heartogether}
-          title="HearTogether – Prototype for Hearing-Impaired Communication"
-          description="Prototyping project for hearing-impaired communication. 
-            Conducted user research and designed interfaces using Figma."
-          links={[
-            { icon: <SiFigma className="text-xl" />, text: "View Prototype", href: "https://ristek.link/HearTogetherPrototype" }
-          ]}
-        />
+          <OtherProjectCard
+            image={heartogether}
+            title="HearTogether – Prototype for Hearing-Impaired Communication"
+            description="Prototyping project for hearing-impaired communication. 
+              Conducted user research and designed interfaces using Figma."
+            links={[
+              { icon: <SiFigma className="text-xl" />, text: "View Prototype", href: "https://ristek.link/HearTogetherPrototype" }
+            ]}
+          />
 
-        <OtherProjectCard
-          image={pacilflix}
-          title="PacilFlix – Django-Powered Movie App with Advanced SQL"
-          description="Web application for PostgreSQL database interaction using Django. 
-            Focused on complex database queries and CRUD operations."
-          links={[
-            { icon: <AiFillGithub className="text-xl" />, text: "View Source Code", href: "https://github.com/BASDAT-F12/F12-PacilFlix" }
-          ]}
-        />
+          <OtherProjectCard
+            image={pacilflix}
+            title="PacilFlix – Django-Powered Movie App with Advanced SQL"
+            description="Web application for PostgreSQL database interaction using Django. 
+              Focused on complex database queries and CRUD operations."
+            links={[
+              { icon: <AiFillGithub className="text-xl" />, text: "View Source Code", href: "https://github.com/BASDAT-F12/F12-PacilFlix" }
+            ]}
+          />
 
-        <OtherProjectCard
-          image={compnetcase}
-          title="Network Infrastructure"
-          description="Designed comprehensive network infrastructure for PT. Amartha Mikro Fintek, 
-            including topology and implementation strategies."
-          links={[
-            { icon: <AiOutlineLink className="text-xl" />, text: "View Case Study", href: "https://ristek.link/CompnetCaseStudyAmartha" }
-          ]}
-        />
+          <OtherProjectCard
+            image={compnetcase}
+            title="Network Infrastructure"
+            description="Designed comprehensive network infrastructure for PT. Amartha Mikro Fintek, 
+              including topology and implementation strategies."
+            links={[
+              { icon: <AiOutlineLink className="text-xl" />, text: "View Case Study", href: "https://ristek.link/CompnetCaseStudyAmartha" }
+            ]}
+          />
+        </div>
       </div>
     </section>
   );
@@ -141,34 +144,56 @@ interface ProjectCardProps {
 
 function ProjectCard({ image, title, description, features, links }: ProjectCardProps) {
   return (
-    <div className="flex-1 text-center shadow-lg p-5 rounded-xl my-10 dark:bg-gradient-to-b from-purple-600 hover:scale-105 transition-transform duration-300">
-      <div className="relative w-full h-64 mb-4">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700 hover:border-netflix-400/30 group">
+      {/* Image Container */}
+      <div className="relative w-full h-72 overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
-          className="rounded-lg object-cover"
+          className="object-cover group-hover:scale-110 transition-transform duration-500"
           priority
         />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
-      <h3 className="text-2xl font-bold dark:text-white">{title}</h3>
-      <p className="text-sm py-2 text-gray-400 leading-6">{description}</p>
-      <h4 className="py-4 text-purple-600 text-md font-semibold">Key Features</h4>
-      {features.map((feature, index) => (
-        <p key={index} className="text-gray-400 text-sm">{feature}</p>
-      ))}
-      <div className="flex gap-2 justify-center mt-4">
-        {links.map((link, index) => (
-          <a
-            key={index}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors flex items-center gap-2"
-          >
-            {link.icon} {link.text}
-          </a>
-        ))}
+      
+      {/* Content */}
+      <div className="p-8">
+        <h3 className="text-2xl font-bold dark:text-white mb-4 group-hover:text-netflix-400 transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 leading-7 mb-6">
+          {description}
+        </p>
+        
+        {/* Features */}
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-netflix-400 dark:text-netflix-300 mb-3">Key Features</h4>
+          <div className="grid grid-cols-2 gap-2">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <div className="w-2 h-2 bg-netflix-400 dark:bg-netflix-300 rounded-full"></div>
+                {feature}
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Links */}
+        <div className="flex flex-wrap gap-3">
+          {links.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-netflix-400 text-white rounded-lg hover:bg-netflix-500 transition-all duration-300 flex items-center gap-2 text-sm font-medium hover:scale-105 hover:shadow-lg"
+            >
+              {link.icon} {link.text}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -183,19 +208,30 @@ interface OtherProjectCardProps {
 
 function OtherProjectCard({ image, title, description, links }: OtherProjectCardProps) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-      <div className="relative w-full h-48">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700 hover:border-netflix-400/30 group">
+      {/* Image Container */}
+      <div className="relative w-full h-56 overflow-hidden">
         <Image
           src={image}
           alt={`${title} Preview`}
           fill
-          className="rounded-t-lg object-cover"
+          className="object-cover group-hover:scale-110 transition-transform duration-500"
           priority
         />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
-      <div className="p-5">
-        <h4 className="text-xl font-bold mb-2 dark:text-white">{title}</h4>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{description}</p>
+      
+      {/* Content */}
+      <div className="p-6">
+        <h4 className="text-xl font-bold mb-3 dark:text-white group-hover:text-netflix-400 transition-colors duration-300">
+          {title}
+        </h4>
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-6">
+          {description}
+        </p>
+        
+        {/* Links */}
         <div className="flex flex-wrap gap-2">
           {links.map((link, index) => (
             <a
@@ -203,7 +239,7 @@ function OtherProjectCard({ image, title, description, links }: OtherProjectCard
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-600 hover:text-purple-700 flex items-center gap-2 text-sm"
+              className="text-netflix-400 dark:text-netflix-300 hover:text-netflix-500 flex items-center gap-2 text-sm font-medium hover:scale-105 transition-all duration-300 p-2 rounded-lg hover:bg-netflix-400/10"
             >
               {link.icon} {link.text}
             </a>

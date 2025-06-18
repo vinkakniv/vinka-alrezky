@@ -10,6 +10,16 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
+      colors: {
+        netflix: {
+          100: '#ffe5e5',
+          200: '#ffcccc',
+          300: '#ff6666',
+          400: '#ff3333', 
+          500: '#e50914', 
+          600: '#cc0000',
+        },
+      },
     },
   },
   plugins: [],

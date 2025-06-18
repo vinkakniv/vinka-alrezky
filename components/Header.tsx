@@ -19,22 +19,22 @@ export default function Header({ darkmode, setDarkmode }: HeaderProps) {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
             <li>
-              <a href="#about" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="#about" className="text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors">
                 About
               </a>
             </li>
             <li>
-              <a href="#skills" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="#skills" className="text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors">
                 Skills
               </a>
             </li>
             <li>
-              <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="#projects" className="text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors">
                 Projects
               </a>
             </li>
             <li>
-              <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="#contact" className="text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors">
                 Contact
               </a>
             </li>
@@ -43,20 +43,20 @@ export default function Header({ darkmode, setDarkmode }: HeaderProps) {
 
         <div className="flex items-center gap-4">
           <BsFillMoonStarsFill
-            className="cursor-pointer text-xl dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            className="cursor-pointer text-xl dark:text-white hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors"
             onClick={() => setDarkmode(!darkmode)}
           />
           <a
             href="/Vinka Alrezky As CV.pdf"
             download
-            className="bg-purple-600 text-white px-4 py-2 border-none rounded-md hover:bg-purple-700 transition-colors flex items-center gap-2"
+            className="bg-netflix-400 text-white px-4 py-2 border-none rounded-md hover:bg-netflix-500 transition-colors flex items-center gap-2"
           >
             <AiOutlineDownload className="text-xl" /> Resume
           </a>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-gray-600 dark:text-gray-300"
+            className="md:hidden text-black dark:text-gray-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,22 +75,22 @@ export default function Header({ darkmode, setDarkmode }: HeaderProps) {
         <div className="md:hidden absolute top-20 right-0 w-full bg-white dark:bg-gray-800 shadow-lg py-4">
           <ul className="flex flex-col items-center gap-4">
             <li>
-              <a href="#about" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="#about" className="text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors">
                 About
               </a>
             </li>
             <li>
-              <a href="#skills" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="#skills" className="text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors">
                 Skills
               </a>
             </li>
             <li>
-              <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="#projects" className="text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors">
                 Projects
               </a>
             </li>
             <li>
-              <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="#contact" className="text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors">
                 Contact
               </a>
             </li>

@@ -55,47 +55,53 @@ export default function ContactForm() {
 
   return (
     <section className="py-20">
-      <div className="max-w-4xl mx-auto">
-        <h3 className="text-3xl py-10 font-bold opacity-60 dark:text-white dark:opacity-100 text-center">
-          Contact Me
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h3 className="text-3xl py-10 font-bold text-black dark:text-white">
+            Contact Me
+          </h3>
+          <p className="text-sm py-2 text-black dark:text-gray-400 leading-7 md:text-lg max-w-3xl mx-auto">
+            Feel free to reach out for collaborations, opportunities, or just to say hello!
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-            <h4 className="text-xl font-bold mb-4 text-purple-600 dark:text-purple-400">Send Message</h4>
+            <h4 className="text-xl font-bold mb-4 text-netflix-400 dark:text-netflix-300">Send Message</h4>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-black dark:text-gray-300 mb-1">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-netflix-400 focus:border-transparent dark:bg-gray-700 dark:text-white"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-black dark:text-gray-300 mb-1">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-netflix-400 focus:border-transparent dark:bg-gray-700 dark:text-white"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-black dark:text-gray-300 mb-1">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   value={form.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-netflix-400 focus:border-transparent dark:bg-gray-700 dark:text-white"
                   required
                 ></textarea>
               </div>
@@ -108,7 +114,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors flex items-center justify-center gap-2 ${
+                className={`w-full bg-netflix-400 text-white px-6 py-3 rounded-md hover:bg-netflix-500 transition-colors flex items-center justify-center gap-2 ${
                   loading ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
@@ -130,20 +136,17 @@ export default function ContactForm() {
             </form>
           </div>
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-            <h4 className="text-xl font-bold mb-4 text-purple-600 dark:text-purple-400">Contact Info</h4>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              I'm always open to new opportunities, collaborations, or simply a good tech chat. Let's connect!
-            </p>
-            <div className="space-y-4">
-              <a href="mailto:vinka.aeris@gmail.com" className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+            <h4 className="text-xl font-bold mb-4 text-netflix-400 dark:text-netflix-300">Contact Info</h4>
+            <div className="space-y-6">
+              <a href="mailto:vinka.aeris@gmail.com" className="flex items-center gap-3 text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
                 <AiOutlineMail className="text-2xl" />
                 <span>vinka.aeris@gmail.com</span>
               </a>
-              <a href="https://github.com/vinkakniv" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="https://github.com/vinkakniv" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
                 <AiFillGithub className="text-2xl" />
                 <span>vinkakniv</span>
               </a>
-              <a href="https://www.linkedin.com/in/vinka-alrezky-a-6b6a19245/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <a href="https://www.linkedin.com/in/vinka-alrezky-a-6b6a19245/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
                 <AiFillLinkedin className="text-2xl" />
                 <span>Vinka Alrezky As</span>
               </a>
