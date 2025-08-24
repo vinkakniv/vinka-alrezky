@@ -101,11 +101,11 @@ export default function Home() {
           
           {/* Apple-style Feature Section */}
           <div 
-            className="flex justify-center items-center mt-8 md:mt-16 mb-16 md:mb-32 scroll-animate px-4"
+            className="flex justify-center items-center mt-24 md:mt-32 mb-16 md:mb-32 scroll-animate px-4"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'all 0.6s ease-out' }}
           >
             <div className="relative max-w-4xl w-full">
-              {/* Main Feature Card */}
+  
               <div className="glass-apple dark:glass-apple-dark rounded-apple-xl p-6 md:p-12 shadow-apple-xl apple-card">
                 <div className="text-center">
                   <div className="mb-8">
