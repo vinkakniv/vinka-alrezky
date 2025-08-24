@@ -54,67 +54,71 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-20">
+    <section className="py-24">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h3 className="text-3xl py-10 font-bold text-black dark:text-white">
-            Contact Me
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h3 className="text-4xl md:text-5xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight">
+            Let's Chat! 💬
           </h3>
-          <p className="text-sm py-2 text-black dark:text-gray-400 leading-7 md:text-lg max-w-3xl mx-auto">
-            Feel free to reach out for collaborations, opportunities, or just to say hello!
+          <p className="text-lg md:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto">
+            Got a cool project idea? Want to collaborate? Or just want to say hi? I'd love to hear from you!
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-            <h4 className="text-xl font-bold mb-4 text-netflix-400 dark:text-netflix-300">Send Message</h4>
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto animate-slide-in">
+          <div className="glass-apple dark:glass-apple-dark p-8 rounded-apple-lg shadow-apple-lg">
+            <h4 className="text-2xl font-semibold mb-6 text-apple-blue-600 dark:text-apple-blue-400 tracking-tight">Send Message</h4>
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-black dark:text-gray-300 mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-apple-gray-700 dark:text-apple-gray-300 mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-netflix-400 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-4 py-3 border border-apple-gray-300 dark:border-apple-dark-600 rounded-apple focus:ring-2 focus:ring-apple-blue-500 focus:border-transparent dark:bg-apple-dark-800 dark:text-white transition-all duration-200 apple-focus"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-black dark:text-gray-300 mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-apple-gray-700 dark:text-apple-gray-300 mb-2">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-netflix-400 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-4 py-3 border border-apple-gray-300 dark:border-apple-dark-600 rounded-apple focus:ring-2 focus:ring-apple-blue-500 focus:border-transparent dark:bg-apple-dark-800 dark:text-white transition-all duration-200 apple-focus"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-black dark:text-gray-300 mb-1">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-apple-gray-700 dark:text-apple-gray-300 mb-2">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-netflix-400 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  rows={5}
+                  className="w-full px-4 py-3 border border-apple-gray-300 dark:border-apple-dark-600 rounded-apple focus:ring-2 focus:ring-apple-blue-500 focus:border-transparent dark:bg-apple-dark-800 dark:text-white transition-all duration-200 apple-focus resize-none"
                   required
                 ></textarea>
               </div>
               {error && (
-                <p className="text-red-500 text-sm">{error}</p>
+                <div className="p-3 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-apple">
+                  <p className="text-red-700 dark:text-red-400 text-sm">{error}</p>
+                </div>
               )}
               {success && (
-                <p className="text-green-500 text-sm">Message sent successfully!</p>
+                <div className="p-3 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-apple">
+                  <p className="text-green-700 dark:text-green-400 text-sm">Message sent successfully!</p>
+                </div>
               )}
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full bg-netflix-400 text-white px-6 py-3 rounded-md hover:bg-netflix-500 transition-colors flex items-center justify-center gap-2 ${
+                className={`apple-button w-full bg-apple-blue-600 hover:bg-apple-blue-700 text-white px-6 py-4 rounded-apple font-medium text-lg flex items-center justify-center gap-3 shadow-apple transition-all duration-300 apple-focus ${
                   loading ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
@@ -135,20 +139,51 @@ export default function ContactForm() {
               </button>
             </form>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-            <h4 className="text-xl font-bold mb-4 text-netflix-400 dark:text-netflix-300">Contact Info</h4>
+          
+          <div className="glass-apple dark:glass-apple-dark p-8 rounded-apple-lg shadow-apple-lg">
+            <h4 className="text-2xl font-semibold mb-6 text-apple-blue-600 dark:text-apple-blue-400 tracking-tight">Contact Info</h4>
             <div className="space-y-6">
-              <a href="mailto:vinka.aeris@gmail.com" className="flex items-center gap-3 text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                <AiOutlineMail className="text-2xl" />
-                <span>vinka.aeris@gmail.com</span>
+              <a 
+                href="mailto:vinka.aeris@gmail.com" 
+                className="apple-button group flex items-center gap-4 text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue-600 dark:hover:text-apple-blue-400 transition-all duration-300 p-4 rounded-apple hover:bg-apple-gray-100 dark:hover:bg-apple-dark-800 apple-focus"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-apple-blue-100 dark:bg-apple-blue-900/30 rounded-apple flex items-center justify-center group-hover:bg-apple-blue-600 group-hover:text-white transition-all duration-300">
+                  <AiOutlineMail className="text-xl" />
+                </div>
+                <div>
+                  <p className="font-medium">Email</p>
+                  <p className="text-sm text-apple-gray-500 dark:text-apple-gray-400">vinka.aeris@gmail.com</p>
+                </div>
               </a>
-              <a href="https://github.com/vinkakniv" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                <AiFillGithub className="text-2xl" />
-                <span>vinkakniv</span>
+              
+              <a 
+                href="https://github.com/vinkakniv" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="apple-button group flex items-center gap-4 text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue-600 dark:hover:text-apple-blue-400 transition-all duration-300 p-4 rounded-apple hover:bg-apple-gray-100 dark:hover:bg-apple-dark-800 apple-focus"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-apple-blue-100 dark:bg-apple-blue-900/30 rounded-apple flex items-center justify-center group-hover:bg-apple-blue-600 group-hover:text-white transition-all duration-300">
+                  <AiFillGithub className="text-xl" />
+                </div>
+                <div>
+                  <p className="font-medium">GitHub</p>
+                  <p className="text-sm text-apple-gray-500 dark:text-apple-gray-400">vinkakniv</p>
+                </div>
               </a>
-              <a href="https://www.linkedin.com/in/vinka-alrezky-a-6b6a19245/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-black dark:text-gray-300 hover:text-netflix-400 dark:hover:text-netflix-500 transition-colors p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                <AiFillLinkedin className="text-2xl" />
-                <span>Vinka Alrezky As</span>
+              
+              <a 
+                href="https://www.linkedin.com/in/vinka-alrezky-a-6b6a19245/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="apple-button group flex items-center gap-4 text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue-600 dark:hover:text-apple-blue-400 transition-all duration-300 p-4 rounded-apple hover:bg-apple-gray-100 dark:hover:bg-apple-dark-800 apple-focus"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-apple-blue-100 dark:bg-apple-blue-900/30 rounded-apple flex items-center justify-center group-hover:bg-apple-blue-600 group-hover:text-white transition-all duration-300">
+                  <AiFillLinkedin className="text-xl" />
+                </div>
+                <div>
+                  <p className="font-medium">LinkedIn</p>
+                  <p className="text-sm text-apple-gray-500 dark:text-apple-gray-400">Vinka Alrezky As</p>
+                </div>
               </a>
             </div>
           </div>

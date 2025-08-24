@@ -38,7 +38,7 @@ export default function GameSection() {
           });
           setPokeballVisible(true);
         }
-      }, 1500);
+      }, 1200);
     }
 
     return () => {
@@ -51,7 +51,6 @@ export default function GameSection() {
     setIsGameActive(true);
     setScore(0);
     setTimeLeft(30);
-    setPokeballVisible(true);
     setShowModal(false);
     const maxX = 240 - 64;
     const maxY = 240 - 64;
@@ -59,6 +58,7 @@ export default function GameSection() {
       x: Math.random() * maxX, 
       y: Math.random() * maxY 
     });
+    setPokeballVisible(true);
   };
 
   const stopGame = () => {
@@ -94,32 +94,31 @@ export default function GameSection() {
   return (
     <div className="w-full">
       <div className="text-center mb-6">
-        <p className="text-sm text-black dark:text-gray-400 leading-6 mb-4">
-          Take a quick break and play a mini-game! Click the Pokeball to catch it. 
-          How many can you catch in 30 seconds?
+        <p className="text-sm text-apple-gray-600 dark:text-apple-gray-400 leading-6 mb-4">
+          Let's have some fun! Try to catch as many Pokeballs as you can. Ready for the challenge? 
         </p>
       </div>
       
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border border-gray-100 dark:border-gray-700">
+      <div className="glass-apple dark:glass-apple-dark rounded-apple-lg shadow-apple-lg p-6 border border-apple-gray-200/30 dark:border-apple-dark-700/30">
         <div className="text-center mb-4">
-          <div className="text-xl font-bold text-netflix-400 dark:text-netflix-300 mb-2">
-            {score} Pokeball Caught!
+          <div className="text-xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-2">
+            {score} Pokeball{score !== 1 ? 's' : ''} Caught! 🎯
           </div>
-          <div className="text-lg text-black dark:text-gray-400 mb-4">
+          <div className="text-lg text-apple-gray-900 dark:text-apple-gray-300 mb-4">
             Time: {timeLeft}s
           </div>
           <div className="flex gap-3 justify-center">
             {!isGameActive ? (
               <button 
                 onClick={startGame}
-                className="px-4 py-2 bg-netflix-400 text-white rounded-lg hover:bg-netflix-500 transition-colors font-medium text-sm"
+                className="apple-button px-6 py-3 bg-apple-blue-600 text-white rounded-apple hover:bg-apple-blue-700 transition-all duration-300 font-medium text-sm shadow-apple apple-focus"
               >
                 Start Game
               </button>
             ) : (
               <button 
                 onClick={stopGame}
-                className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium text-sm"
+                className="apple-button px-6 py-3 bg-red-500 text-white rounded-apple hover:bg-red-600 transition-all duration-300 font-medium text-sm shadow-apple apple-focus"
               >
                 Stop Game
               </button>
@@ -127,10 +126,10 @@ export default function GameSection() {
           </div>
         </div>
         
-        <div className="relative w-60 h-60 bg-gradient-to-br from-yellow-100 to-yellow-200 dark:from-yellow-900 dark:to-yellow-800 rounded-xl overflow-hidden border-2 border-yellow-300 dark:border-yellow-600 mx-auto">
+        <div className="relative w-60 h-60 bg-gradient-to-br from-yellow-100 to-yellow-200 dark:from-yellow-900/40 dark:to-yellow-800/40 rounded-apple-lg overflow-hidden border-2 border-yellow-300/50 dark:border-yellow-600/30 mx-auto shadow-apple-inner">
           {pokeballVisible && isGameActive && (
             <div 
-              className="absolute w-16 h-16 cursor-pointer transition-all duration-300 flex items-center justify-center"
+              className="absolute w-16 h-16 cursor-pointer transition-all duration-300 flex items-center justify-center apple-button z-20"
               style={{ 
                 left: pokeballPosition.x + 'px',
                 top: pokeballPosition.y + 'px'
@@ -142,41 +141,41 @@ export default function GameSection() {
                 alt="Pokeball"
                 width={64}
                 height={64}
-                className="hover:scale-110 transition-transform duration-200"
+                className="hover:scale-110 transition-transform duration-200 drop-shadow-md"
               />
             </div>
           )}
         </div>
         
         <div className="text-center mt-4">
-          <p className="text-xs text-black dark:text-gray-400">
-            Click the Pokeball as fast as you can! 🎮
+          <p className="text-xs text-apple-gray-600 dark:text-apple-gray-400">
+            Click fast and have fun! 🎮⚡
           </p>
         </div>
       </div>
 
-      {/* Custom Modal */}
+  
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 max-w-sm mx-4 border border-gray-100 dark:border-gray-700">
+        <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="glass-apple-dark rounded-apple-xl shadow-apple-2xl p-8 max-w-sm mx-4 border border-apple-gray-200/20 dark:border-apple-dark-700/20 animate-scale-in">
             <div className="text-center">
-              <div className="text-4xl mb-3">🎉</div>
-              <h3 className="text-xl font-bold text-netflix-400 dark:text-netflix-300 mb-3">
-                Game Over!
+              <div className="text-4xl mb-4">🎉</div>
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                Nice Job! 🎉
               </h3>
-              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
-                You caught <span className="font-bold text-netflix-400 dark:text-netflix-300">{score}</span> Pokeball!
+              <p className="text-lg text-apple-gray-300 mb-6">
+                You caught <span className="font-bold text-apple-blue-400">{score}</span> Pokeball{score !== 1 ? 's' : ''}! {score >= 10 ? "Wow, you're fast! ⚡" : score >= 5 ? "Not bad! 👍" : "Keep practicing! 💪"}
               </p>
-              <div className="flex gap-2 justify-center">
+              <div className="flex gap-3 justify-center">
                 <button 
                   onClick={closeModal}
-                  className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors font-medium text-sm"
+                  className="apple-button px-6 py-3 bg-apple-gray-600 text-white rounded-apple hover:bg-apple-gray-700 transition-all duration-300 font-medium shadow-apple apple-focus"
                 >
                   Close
                 </button>
                 <button 
                   onClick={startGame}
-                  className="px-4 py-2 bg-netflix-400 text-white rounded-lg hover:bg-netflix-500 transition-colors font-medium text-sm"
+                  className="apple-button px-6 py-3 bg-apple-blue-600 text-white rounded-apple hover:bg-apple-blue-700 transition-all duration-300 font-medium shadow-apple apple-focus"
                 >
                   Play Again
                 </button>

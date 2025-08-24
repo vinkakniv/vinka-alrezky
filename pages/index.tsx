@@ -37,112 +37,172 @@ import pacilflix from "../public/pacilflix.png";
 import compnetcase from "../public/compnetcase.png";
 import heartogether from "../public/heartogether.png";
 // hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Skills from "../components/Skills";
+import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 import ContactForm from "../components/ContactForm";
 import GameSection from "../components/GameSection";
 
-// applicaiton
+// application
 export default function Home() {
   // functions
-  const [darkmode, setDarkmode] = useState(true);
-  const [isGameOpen, setIsGameOpen] = useState(false);
+  const [darkmode, setDarkmode] = useState(false);
+  const [showGameSection, setShowGameSection] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.scroll-animate');
+      const windowHeight = window.innerHeight;
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        
+        // Show when element is in viewport
+        if (elementTop < windowHeight && elementBottom > 0) {
+          (element as HTMLElement).style.opacity = '1';
+          (element as HTMLElement).style.transform = 'translateY(0)';
+        } else {
+          // Hide when element is out of viewport
+          (element as HTMLElement).style.opacity = '0';
+          (element as HTMLElement).style.transform = 'translateY(30px)';
+        }
+      });
+    };
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className={darkmode ? "dark" : ""}>
       <Head>
         <title>Vinka Alrezky As - Portfolio</title>
         <meta name="description" content="Portfolio website of Vinka Alrezky As - Tech Enthusiast & Full Stack Developer" />
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
-        </style>
         <link rel="icon" href="/va.png" />
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
       </Head>
 
-      <main className="font-poppins bg-white px-6 md:px-12 lg:px-20 dark:bg-black">
-        <section id="about" className="min-h-screen">
-          <Header darkmode={darkmode} setDarkmode={setDarkmode} />
+      {/* Fixed Header */}
+      <Header darkmode={darkmode} setDarkmode={setDarkmode} />
+
+      <main className="min-h-screen bg-apple-gray-50 dark:bg-apple-dark-900 px-6 md:px-12 lg:px-20 transition-colors duration-300 pt-20">
+        <section id="about" className="min-h-screen flex items-center">
           <Hero />
+        </section>
           
-          {/* 3D Model Section */}
-          <div className="flex justify-center items-center mt-10 mb-20">
-            <div className="relative">
-              {/* Background Circle with Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-netflix-100 via-netflix-400/20 to-netflix-100 w-96 h-96 rounded-full blur-xl opacity-50 animate-pulse"></div>
-              
-              {/* Main 3D Container */}
-              <div className="relative bg-gradient-to-b from-netflix-100 via-white to-netflix-100 dark:from-netflix-500/20 dark:via-gray-800 dark:to-netflix-500/20 w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-netflix-400/20 hover:border-netflix-400/40 transition-all duration-500 hover:scale-105">
-                <model-viewer
-                  src="/pikachu.glb"
-                  alt="3D Pikachu Model"
-                  auto-rotate
-                  camera-controls
-                  shadow-intensity="1"
-                  camera-orbit="0deg 75deg 75%"
-                  min-camera-orbit="auto auto 50%"
-                  max-camera-orbit="auto auto 150%"
-                  style={{ width: '100%', height: '100%' }}
-                ></model-viewer>
+          {/* Apple-style Feature Section */}
+          <div 
+            className="flex justify-center items-center mt-16 mb-32 scroll-animate"
+            style={{ opacity: 0, transform: 'translateY(30px)', transition: 'all 0.6s ease-out' }}
+          >
+            <div className="relative max-w-4xl w-full">
+              {/* Main Feature Card */}
+              <div className="glass-apple dark:glass-apple-dark rounded-apple-xl p-12 shadow-apple-xl apple-card">
+                <div className="text-center">
+                  <div className="mb-8">
+                    <div className="w-32 h-32 mx-auto bg-gradient-to-br from-apple-blue-400 to-apple-blue-600 rounded-apple-xl flex items-center justify-center shadow-apple-lg">
+                      <model-viewer
+                        src="/pikachu.glb"
+                        alt="3D Pikachu Model"
+                        auto-rotate
+                        camera-controls
+                        shadow-intensity="1"
+                        camera-orbit="0deg 75deg 75%"
+                        min-camera-orbit="auto auto 50%"
+                        max-camera-orbit="auto auto 150%"
+                        style={{ width: '100%', height: '100%', borderRadius: '16px' }}
+                      ></model-viewer>
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-3xl font-semibold text-apple-gray-900 dark:text-white mb-4 tracking-tight">
+                    Play with Pikachu⚡
+                  </h3>
+                  <p className="text-lg text-apple-gray-600 dark:text-apple-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    I just love Pikachu! Enjoy this fun game section I’ve added for you.
+                  </p>
+                  
+                  <button
+                    onClick={() => setShowGameSection(true)}
+                    className="apple-button bg-apple-blue-600 hover:bg-apple-blue-700 text-white px-8 py-4 rounded-apple-lg shadow-apple font-medium text-lg flex items-center gap-3 mx-auto apple-focus"
+                  >
+                    <span className="text-2xl">🎮</span>
+                    Play Mini Game
+                  </button>
+                </div>
               </div>
-              
+
               {/* Floating Elements */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-netflix-400/30 rounded-full animate-bounce"></div>
-              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-netflix-400/40 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
-              <div className="absolute top-1/2 -right-8 w-4 h-4 bg-netflix-400/50 rounded-full animate-ping"></div>
-              
-              {/* Game Button */}
-              <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2">
-                <button
-                  onClick={() => setIsGameOpen(true)}
-                  className="bg-netflix-400 hover:bg-netflix-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 font-medium hover:scale-105"
-                >
-                  <span className="text-xl">🎮</span>
-                  Play Mini Game
-                </button>
-              </div>
+              <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-to-br from-apple-blue-400 to-apple-blue-600 rounded-apple opacity-20 animate-pulse"></div>
+              <div className="absolute -bottom-6 -right-6 w-8 h-8 bg-gradient-to-br from-apple-blue-500 to-apple-blue-700 rounded-apple opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 -right-12 w-6 h-6 bg-gradient-to-br from-apple-blue-300 to-apple-blue-500 rounded-apple opacity-25 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
             </div>
           </div>
+
+        <section 
+          id="experience" 
+          className="py-20 scroll-animate"
+          style={{ opacity: 0, transform: 'translateY(30px)', transition: 'all 0.6s ease-out' }}
+        >
+          <Experience />
         </section>
 
-        <section id="skills">
+        <section 
+          id="skills" 
+          className="py-20 bg-apple-gray-50 dark:bg-apple-dark-800 scroll-animate"
+          style={{ opacity: 0, transform: 'translateY(30px)', transition: 'all 0.6s ease-out' }}
+        >
           <Skills />
         </section>
 
-        <section id="projects">
+        <section 
+          id="projects" 
+          className="py-20 scroll-animate"
+          style={{ opacity: 0, transform: 'translateY(30px)', transition: 'all 0.6s ease-out' }}
+        >
           <Projects />
         </section>
 
-        <section id="contact">
+        {/* Game Popup Modal */}
+        {showGameSection && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-scale-in">
+            <div className="glass-apple dark:glass-apple-dark rounded-apple-xl shadow-apple-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-apple-gray-200/20 dark:border-apple-dark-700/20">
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-2xl font-bold text-apple-gray-900 dark:text-white">Mini Game 🎮</h2>
+                  <button
+                    onClick={() => setShowGameSection(false)}
+                    className="apple-button text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-gray-900 dark:hover:text-white text-3xl p-2 rounded-apple hover:bg-apple-gray-200 dark:hover:bg-apple-dark-700 transition-all duration-200"
+                  >
+                    ×
+                  </button>
+                </div>
+                <GameSection />
+              </div>
+            </div>
+          </div>
+        )}
+
+        <section 
+          id="contact" 
+          className="py-20 bg-apple-gray-50 dark:bg-apple-dark-800 scroll-animate"
+          style={{ opacity: 0, transform: 'translateY(30px)', transition: 'all 0.6s ease-out' }}
+        >
           <ContactForm />
         </section>
       </main>
 
-      {/* Game Sidebar */}
-      {isGameOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-end">
-          <div className="bg-white dark:bg-gray-800 w-full max-w-md h-full overflow-y-auto shadow-2xl transform transition-transform duration-300 ease-in-out">
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-netflix-400">Mini Game</h2>
-                <button
-                  onClick={() => setIsGameOpen(false)}
-                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 text-2xl"
-                >
-                  ×
-                </button>
-              </div>
-              <GameSection />
-            </div>
-          </div>
-        </div>
-      )}
-
-      <footer className="w-full py-6 text-center border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-black">
-        <span className="text-sm text-black dark:text-gray-400">
+      <footer className="w-full py-8 text-center border-t border-apple-gray-200 dark:border-apple-dark-700 bg-apple-gray-50 dark:bg-apple-dark-900">
+        <span className="text-sm text-apple-gray-600 dark:text-apple-gray-400 font-medium">
           &copy; 2025 Vinka Alrezky As. All rights reserved.
         </span>
       </footer>

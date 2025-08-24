@@ -1,33 +1,100 @@
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="text-center p-10 max-w-6xl mx-auto">
+    <div className="text-center py-16 max-w-5xl mx-auto animate-fade-in-up">
+      {/* Profile Image */}
+      <div className="mb-12 flex justify-center">
+        <div className="relative">
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-apple-xl overflow-hidden shadow-apple-lg bg-gradient-to-br from-apple-blue-400 to-apple-blue-600 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+            <Image
+              src="/foto-vinka.JPG"
+              alt="Vinka Alrezky As"
+              width={192}
+              height={192}
+              className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-300"
+              priority
+            />
+          </div>
+          {/* Fun floating indicator */}
+          <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-yellow-400 rounded-full border-4 border-white dark:border-apple-dark-900 shadow-apple flex items-center justify-center transform rotate-12 hover:rotate-0 transition-transform duration-300">
+            <span className="text-lg">✌️</span>
+          </div>
+          {/* Floating decorative elements */}
+          <div className="absolute -top-2 -left-2 w-6 h-6 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full opacity-70 animate-pulse"></div>
+          <div className="absolute top-4 -right-4 w-4 h-4 bg-gradient-to-br from-green-400 to-blue-500 rounded-full opacity-60 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+      </div>
+
       {/* Main Content */}
-      <div className="mb-16">
-        <h2 className="text-5xl font-bold text-netflix-500 md:text-6xl lg:text-7xl lg:mb-4 mb-6">
-          Vinka Alrezky As
+      <div className="mb-20">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
+          Hi, I'm Vinka! 👋
         </h2>
-        <h3 className="text-2xl py-4 md:text-3xl dark:text-white mb-6">
-          Tech Enthusiast & Full Stack Developer
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium text-apple-blue-600 dark:text-apple-blue-400 mb-8 tracking-wide">
+          Tech Enthusiast
         </h3>
-        <p className="text-sm py-2 text-black dark:text-gray-400 leading-7 md:text-lg max-w-3xl mx-auto mb-8">
-          Third-year Computer Science student at Universitas Indonesia with hands-on experience in full-stack development and a strong interest in secure, scalable applications. Passionate about learning, building real-world solutions, and collaborating in development teams to create high-quality software.
+        <p className="text-lg md:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-4xl mx-auto mb-12 font-normal">
+          I'm a Computer Science student at Universitas Indonesia who loves working with code. 
+          I focus on software development and system analysis, 
+          enjoying the process of building secure applications and designing efficient systems.
         </p>
-        
+
         {/* Social Media Links */}
-        <div className="text-4xl flex justify-center gap-12 text-black dark:text-gray-600 mt-12">
-          <a href="https://github.com/vinkakniv" target="_blank" rel="noopener noreferrer" className="hover:text-netflix-400 transition-all duration-300 hover:scale-110">
-            <AiFillGithub />
+        <div className="flex justify-center gap-8 mt-16">
+          <a
+            href="https://github.com/vinkakniv"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="apple-button group p-4 rounded-apple-lg bg-apple-gray-100 dark:bg-apple-dark-800 hover:bg-apple-gray-200 dark:hover:bg-apple-dark-700 transition-all duration-300 apple-focus"
+          >
+            <AiFillGithub className="text-2xl text-apple-gray-700 dark:text-apple-gray-300 group-hover:text-apple-blue-600 dark:group-hover:text-apple-blue-400 transition-colors duration-300" />
           </a>
-          <a href="https://www.linkedin.com/in/vinka-alrezky-a-6b6a19245/" target="_blank" rel="noopener noreferrer" className="hover:text-netflix-400 transition-all duration-300 hover:scale-110">
-            <AiFillLinkedin />
+          <a
+            href="https://www.linkedin.com/in/vinka-alrezky-a-6b6a19245/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="apple-button group p-4 rounded-apple-lg bg-apple-gray-100 dark:bg-apple-dark-800 hover:bg-apple-gray-200 dark:hover:bg-apple-dark-700 transition-all duration-300 apple-focus"
+          >
+            <AiFillLinkedin className="text-2xl text-apple-gray-700 dark:text-apple-gray-300 group-hover:text-apple-blue-600 dark:group-hover:text-apple-blue-400 transition-colors duration-300" />
           </a>
-          <a href="mailto:vinka.aeris@gmail.com" className="hover:text-netflix-400 transition-all duration-300 hover:scale-110">
-            <AiOutlineMail />
+          <a
+            href="mailto:vinka.aeris@gmail.com"
+            className="apple-button group p-4 rounded-apple-lg bg-apple-gray-100 dark:bg-apple-dark-800 hover:bg-apple-gray-200 dark:hover:bg-apple-dark-700 transition-all duration-300 apple-focus"
+          >
+            <AiOutlineMail className="text-2xl text-apple-gray-700 dark:text-apple-gray-300 group-hover:text-apple-blue-600 dark:group-hover:text-apple-blue-400 transition-colors duration-300" />
           </a>
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto">
+        <div className="glass-apple dark:glass-apple-dark rounded-apple-lg p-6 shadow-apple apple-card">
+          <div className="text-3xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-2">
+            10+
+          </div>
+          <div className="text-apple-gray-600 dark:text-apple-gray-400 font-medium">
+            Projects Completed
+          </div>
+        </div>
+        <div className="glass-apple dark:glass-apple-dark rounded-apple-lg p-6 shadow-apple apple-card">
+          <div className="text-3xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-2">
+            5+
+          </div>
+          <div className="text-apple-gray-600 dark:text-apple-gray-400 font-medium">
+            Programming Languages
+          </div>
+        </div>
+        <div className="glass-apple dark:glass-apple-dark rounded-apple-lg p-6 shadow-apple apple-card">
+          <div className="text-3xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-2">
+            2+
+          </div>
+          <div className="text-apple-gray-600 dark:text-apple-gray-400 font-medium">
+            Years Experience
+          </div>
         </div>
       </div>
     </div>
   );
-} 
+}

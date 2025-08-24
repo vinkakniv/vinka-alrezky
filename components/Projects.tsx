@@ -16,18 +16,18 @@ import kripto from "../public/kripto.png";
 
 export default function Projects() {
   return (
-    <section className="py-20">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h3 className="text-3xl py-10 font-bold text-black dark:text-white">
-            Highlighted Project
+    <section className="py-24">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h3 className="text-4xl md:text-5xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight">
+            Featured Project
           </h3>
-          <p className="text-sm py-2 text-black dark:text-gray-400 leading-7 md:text-lg max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto">
             A showcase of my projects, demonstrating my skills and passion for creating innovative solutions.
           </p>
         </div>
         
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto mb-24">
           <ProjectCard
             image={pantautular}
             title="PantauTular – Infectious Disease Monitoring in Indonesia"
@@ -46,17 +46,17 @@ export default function Projects() {
           />
         </div>
 
-        <div className="text-center mt-20 mb-12">
-          <h3 className="text-3xl py-5 font-bold text-black dark:text-white">
+        <div className="text-center mb-16">
+          <h3 className="text-3xl md:text-4xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight">
             Other Projects
           </h3>
-          <p className="text-sm py-2 text-black dark:text-gray-400 leading-7 md:text-lg max-w-3xl mx-auto">
+          <p className="text-lg text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto">
             Additional projects showcasing my diverse skills in web development, 
             mobile app development, and system architecture.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-in">
           <OtherProjectCard
             image={kripto}
             title="Cryptographic File Security – RSA Encryption"
@@ -144,51 +144,51 @@ interface ProjectCardProps {
 
 function ProjectCard({ image, title, description, features, links }: ProjectCardProps) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700 hover:border-netflix-400/30 group">
+    <div className="glass-apple dark:glass-apple-dark rounded-apple-xl shadow-apple-xl hover:shadow-apple-2xl transition-all duration-500 overflow-hidden border border-apple-gray-200/30 dark:border-apple-dark-700/30 hover:border-apple-blue-300/50 dark:hover:border-apple-blue-500/30 group apple-card">
       {/* Image Container */}
-      <div className="relative w-full h-72 overflow-hidden">
+      <div className="relative w-full h-80 overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-500"
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
           priority
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-apple-gray-900/20 via-transparent to-transparent"></div>
       </div>
       
       {/* Content */}
-      <div className="p-8">
-        <h3 className="text-2xl font-bold dark:text-white mb-4 group-hover:text-netflix-400 transition-colors duration-300">
+      <div className="p-10">
+        <h3 className="text-3xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight group-hover:text-apple-blue-600 dark:group-hover:text-apple-blue-400 transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 leading-7 mb-6">
+        <p className="text-lg text-apple-gray-600 dark:text-apple-gray-300 leading-relaxed mb-8">
           {description}
         </p>
         
         {/* Features */}
-        <div className="mb-6">
-          <h4 className="text-lg font-semibold text-netflix-400 dark:text-netflix-300 mb-3">Key Features</h4>
-          <div className="grid grid-cols-2 gap-2">
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold text-apple-blue-600 dark:text-apple-blue-400 mb-4">Key Features</h4>
+          <div className="grid grid-cols-2 gap-3">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <div className="w-2 h-2 bg-netflix-400 dark:bg-netflix-300 rounded-full"></div>
-                {feature}
+              <div key={index} className="flex items-center gap-3 text-apple-gray-600 dark:text-apple-gray-400">
+                <div className="w-2 h-2 bg-apple-blue-600 dark:bg-apple-blue-400 rounded-full"></div>
+                <span className="font-medium">{feature}</span>
               </div>
             ))}
           </div>
         </div>
         
         {/* Links */}
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-4">
           {links.map((link, index) => (
             <a
               key={index}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-netflix-400 text-white rounded-lg hover:bg-netflix-500 transition-all duration-300 flex items-center gap-2 text-sm font-medium hover:scale-105 hover:shadow-lg"
+              className="apple-button px-6 py-3 bg-apple-blue-600 hover:bg-apple-blue-700 text-white rounded-apple font-medium flex items-center gap-3 shadow-apple hover:shadow-apple-lg transition-all duration-300 apple-focus"
             >
               {link.icon} {link.text}
             </a>
@@ -208,38 +208,36 @@ interface OtherProjectCardProps {
 
 function OtherProjectCard({ image, title, description, links }: OtherProjectCardProps) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700 hover:border-netflix-400/30 group">
+    <div className="glass-apple dark:glass-apple-dark rounded-apple-lg shadow-apple hover:shadow-apple-lg transition-all duration-500 overflow-hidden border border-apple-gray-200/30 dark:border-apple-dark-700/30 hover:border-apple-blue-300/50 dark:hover:border-apple-blue-500/30 group apple-card">
       {/* Image Container */}
       <div className="relative w-full h-56 overflow-hidden">
         <Image
           src={image}
           alt={`${title} Preview`}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-500"
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
           priority
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       
       {/* Content */}
       <div className="p-6">
-        <h4 className="text-xl font-bold mb-3 dark:text-white group-hover:text-netflix-400 transition-colors duration-300">
+        <h4 className="text-xl font-bold mb-4 text-apple-gray-900 dark:text-white tracking-tight group-hover:text-apple-blue-600 dark:group-hover:text-apple-blue-400 transition-colors duration-300">
           {title}
         </h4>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-6">
+        <p className="text-apple-gray-600 dark:text-apple-gray-300 mb-6 leading-relaxed">
           {description}
         </p>
         
         {/* Links */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
           {links.map((link, index) => (
             <a
               key={index}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-netflix-400 dark:text-netflix-300 hover:text-netflix-500 flex items-center gap-2 text-sm font-medium hover:scale-105 transition-all duration-300 p-2 rounded-lg hover:bg-netflix-400/10"
+              className="apple-button text-apple-blue-600 dark:text-apple-blue-400 hover:text-white hover:bg-apple-blue-600 dark:hover:bg-apple-blue-600 flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-apple hover:shadow-apple transition-all duration-300 apple-focus"
             >
               {link.icon} {link.text}
             </a>
