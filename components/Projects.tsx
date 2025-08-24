@@ -16,18 +16,18 @@ import kripto from "../public/kripto.png";
 
 export default function Projects() {
   return (
-    <section className="py-24">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <h3 className="text-4xl md:text-5xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight">
+    <section className="py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="text-center mb-12 md:mb-20 animate-fade-in-up">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-apple-gray-900 dark:text-white mb-4 md:mb-6 tracking-tight">
             Featured Project
           </h3>
-          <p className="text-lg md:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto px-4">
             A showcase of my projects, demonstrating my skills and passion for creating innovative solutions.
           </p>
         </div>
         
-        <div className="max-w-6xl mx-auto mb-24">
+        <div className="max-w-6xl mx-auto mb-16 md:mb-24">
           <ProjectCard
             image={pantautular}
             title="PantauTular – Infectious Disease Monitoring in Indonesia"
@@ -56,7 +56,7 @@ export default function Projects() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-in">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 animate-slide-in">
           <OtherProjectCard
             image={kripto}
             title="Cryptographic File Security – RSA Encryption"
@@ -146,7 +146,7 @@ function ProjectCard({ image, title, description, features, links }: ProjectCard
   return (
     <div className="glass-apple dark:glass-apple-dark rounded-apple-xl shadow-apple-xl hover:shadow-apple-2xl transition-all duration-500 overflow-hidden border border-apple-gray-200/30 dark:border-apple-dark-700/30 hover:border-apple-blue-300/50 dark:hover:border-apple-blue-500/30 group apple-card">
       {/* Image Container */}
-      <div className="relative w-full h-80 overflow-hidden">
+      <div className="relative w-full h-48 md:h-80 overflow-hidden">
         <Image
           src={image}
           alt={title}
@@ -159,21 +159,21 @@ function ProjectCard({ image, title, description, features, links }: ProjectCard
       </div>
       
       {/* Content */}
-      <div className="p-10">
-        <h3 className="text-3xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight group-hover:text-apple-blue-600 dark:group-hover:text-apple-blue-400 transition-colors duration-300">
+      <div className="p-6 md:p-10">
+        <h3 className="text-xl md:text-3xl font-bold text-apple-gray-900 dark:text-white mb-4 md:mb-6 tracking-tight group-hover:text-apple-blue-600 dark:group-hover:text-apple-blue-400 transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-lg text-apple-gray-600 dark:text-apple-gray-300 leading-relaxed mb-8">
+        <p className="text-sm md:text-lg text-apple-gray-600 dark:text-apple-gray-300 leading-relaxed mb-6 md:mb-8">
           {description}
         </p>
         
         {/* Features */}
-        <div className="mb-8">
-          <h4 className="text-xl font-semibold text-apple-blue-600 dark:text-apple-blue-400 mb-4">Key Features</h4>
-          <div className="grid grid-cols-2 gap-3">
+        <div className="mb-6 md:mb-8">
+          <h4 className="text-lg md:text-xl font-semibold text-apple-blue-600 dark:text-apple-blue-400 mb-3 md:mb-4">Key Features</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-3 text-apple-gray-600 dark:text-apple-gray-400">
-                <div className="w-2 h-2 bg-apple-blue-600 dark:bg-apple-blue-400 rounded-full"></div>
+              <div key={index} className="flex items-center gap-2 md:gap-3 text-apple-gray-600 dark:text-apple-gray-400 text-sm md:text-base">
+                <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-apple-blue-600 dark:bg-apple-blue-400 rounded-full flex-shrink-0"></div>
                 <span className="font-medium">{feature}</span>
               </div>
             ))}
@@ -181,14 +181,14 @@ function ProjectCard({ image, title, description, features, links }: ProjectCard
         </div>
         
         {/* Links */}
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-2 md:gap-4">
           {links.map((link, index) => (
             <a
               key={index}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="apple-button px-6 py-3 bg-apple-blue-600 hover:bg-apple-blue-700 text-white rounded-apple font-medium flex items-center gap-3 shadow-apple hover:shadow-apple-lg transition-all duration-300 apple-focus"
+              className="apple-button px-4 md:px-6 py-2 md:py-3 bg-apple-blue-600 hover:bg-apple-blue-700 text-white rounded-apple font-medium flex items-center gap-2 md:gap-3 shadow-apple hover:shadow-apple-lg transition-all duration-300 apple-focus text-sm md:text-base"
             >
               {link.icon} {link.text}
             </a>
@@ -210,7 +210,7 @@ function OtherProjectCard({ image, title, description, links }: OtherProjectCard
   return (
     <div className="glass-apple dark:glass-apple-dark rounded-apple-lg shadow-apple hover:shadow-apple-lg transition-all duration-500 overflow-hidden border border-apple-gray-200/30 dark:border-apple-dark-700/30 hover:border-apple-blue-300/50 dark:hover:border-apple-blue-500/30 group apple-card">
       {/* Image Container */}
-      <div className="relative w-full h-56 overflow-hidden">
+      <div className="relative w-full h-40 md:h-56 overflow-hidden">
         <Image
           src={image}
           alt={`${title} Preview`}
@@ -221,23 +221,23 @@ function OtherProjectCard({ image, title, description, links }: OtherProjectCard
       </div>
       
       {/* Content */}
-      <div className="p-6">
-        <h4 className="text-xl font-bold mb-4 text-apple-gray-900 dark:text-white tracking-tight group-hover:text-apple-blue-600 dark:group-hover:text-apple-blue-400 transition-colors duration-300">
+      <div className="p-4 md:p-6">
+        <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-apple-gray-900 dark:text-white tracking-tight group-hover:text-apple-blue-600 dark:group-hover:text-apple-blue-400 transition-colors duration-300">
           {title}
         </h4>
-        <p className="text-apple-gray-600 dark:text-apple-gray-300 mb-6 leading-relaxed">
+        <p className="text-sm md:text-base text-apple-gray-600 dark:text-apple-gray-300 mb-4 md:mb-6 leading-relaxed">
           {description}
         </p>
         
         {/* Links */}
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2 md:gap-3">
           {links.map((link, index) => (
             <a
               key={index}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="apple-button text-apple-blue-600 dark:text-apple-blue-400 hover:text-white hover:bg-apple-blue-600 dark:hover:bg-apple-blue-600 flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-apple hover:shadow-apple transition-all duration-300 apple-focus"
+              className="apple-button text-apple-blue-600 dark:text-apple-blue-400 hover:text-white hover:bg-apple-blue-600 dark:hover:bg-apple-blue-600 flex items-center gap-1 md:gap-2 text-xs md:text-sm font-medium px-2 md:px-3 py-1.5 md:py-2 rounded-apple hover:shadow-apple transition-all duration-300 apple-focus"
             >
               {link.icon} {link.text}
             </a>

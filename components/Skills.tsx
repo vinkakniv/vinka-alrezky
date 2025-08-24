@@ -8,18 +8,18 @@ import { FaJava } from "react-icons/fa";
 
 export default function Skills() {
   return (
-    <div className="py-24">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <h3 className="text-4xl md:text-5xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight">
+    <div className="py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="text-center mb-12 md:mb-20 animate-fade-in-up">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-apple-gray-900 dark:text-white mb-4 md:mb-6 tracking-tight">
             Skills & Expertise
           </h3>
-          <p className="text-lg md:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto px-4">
             Here are the technologies and tools I love working with. Always learning something new!
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-in">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 animate-slide-in">
           <SkillCard
             title="Programming Languages"
             skills={[
@@ -101,34 +101,34 @@ interface SkillCardProps {
 
 function SkillCard({ title, skills }: SkillCardProps) {
   return (
-    <div className="glass-apple dark:glass-apple-dark p-8 rounded-apple-lg shadow-apple hover:shadow-apple-lg transition-all duration-300 border border-apple-gray-200/50 dark:border-apple-dark-700/50 hover:border-apple-blue-300/50 dark:hover:border-apple-blue-500/30 group apple-card">
-      <h4 className="text-2xl font-semibold mb-6 text-apple-gray-900 dark:text-white tracking-tight">
+    <div className="glass-apple dark:glass-apple-dark p-4 md:p-8 rounded-apple-lg shadow-apple hover:shadow-apple-lg transition-all duration-300 border border-apple-gray-200/50 dark:border-apple-dark-700/50 hover:border-apple-blue-300/50 dark:hover:border-apple-blue-500/30 group apple-card">
+      <h4 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-apple-gray-900 dark:text-white tracking-tight">
         {title}
       </h4>
-      <div className="space-y-4">
+      <div className="space-y-3 md:space-y-4">
         {skills.map((skill, index) => (
           <div key={index} className="space-y-2">
             <div className="flex items-center justify-between">
-              <span className="flex items-center gap-3 text-apple-gray-700 dark:text-apple-gray-300 font-medium">
+              <span className="flex items-center gap-2 md:gap-3 text-apple-gray-700 dark:text-apple-gray-300 font-medium text-sm md:text-base">
                 {skill.icon}
                 {skill.name}
               </span>
               {skill.level && (
-                <span className="text-sm text-apple-blue-600 dark:text-apple-blue-400 font-semibold">
+                <span className="text-xs md:text-sm text-apple-blue-600 dark:text-apple-blue-400 font-semibold">
                   {skill.level}%
                 </span>
               )}
             </div>
             {skill.level && (
-              <div className="w-full bg-apple-gray-200 dark:bg-apple-dark-700 rounded-full h-2">
+              <div className="w-full bg-apple-gray-200 dark:bg-apple-dark-700 rounded-full h-1.5 md:h-2">
                 <div 
-                  className="bg-gradient-to-r from-apple-blue-500 to-apple-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                  className="bg-gradient-to-r from-apple-blue-500 to-apple-blue-600 h-1.5 md:h-2 rounded-full transition-all duration-1000 ease-out"
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
             )}
             {!skill.level && (
-              <span className="inline-block px-3 py-1 bg-apple-gray-100 dark:bg-apple-dark-800 text-apple-gray-700 dark:text-apple-gray-300 rounded-apple text-sm font-medium">
+              <span className="inline-block px-2 md:px-3 py-1 bg-apple-gray-100 dark:bg-apple-dark-800 text-apple-gray-700 dark:text-apple-gray-300 rounded-apple text-xs md:text-sm font-medium">
                 {skill.name}
               </span>
             )}

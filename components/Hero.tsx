@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="text-center py-16 max-w-5xl mx-auto animate-fade-in-up">
+    <div className="text-center py-8 md:py-16 max-w-5xl mx-auto animate-fade-in-up px-4">
       {/* Profile Image */}
-      <div className="mb-12 flex justify-center">
+      <div className="mb-8 md:mb-12 flex justify-center">
         <div className="relative">
-          <div className="w-40 h-40 md:w-48 md:h-48 rounded-apple-xl overflow-hidden shadow-apple-lg bg-gradient-to-br from-apple-blue-400 to-apple-blue-600 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-apple-xl overflow-hidden shadow-apple-lg bg-gradient-to-br from-apple-blue-400 to-apple-blue-600 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
             <Image
               src="/foto-vinka.JPG"
               alt="Vinka Alrezky As"
@@ -28,21 +28,21 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="mb-20">
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
+      <div className="mb-12 md:mb-20">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-apple-gray-900 dark:text-white mb-4 md:mb-6 tracking-tight leading-tight">
           Hi, I'm Vinka! 👋
         </h2>
-        <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium text-apple-blue-600 dark:text-apple-blue-400 mb-8 tracking-wide">
+        <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-apple-blue-600 dark:text-apple-blue-400 mb-6 md:mb-8 tracking-wide">
           Tech Enthusiast
         </h3>
-        <p className="text-lg md:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-4xl mx-auto mb-12 font-normal">
+        <p className="text-base md:text-lg lg:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-4xl mx-auto mb-8 md:mb-12 font-normal px-4 md:px-0">
           I'm a Computer Science student at Universitas Indonesia who loves working with code. 
           I focus on software development and system analysis, 
           enjoying the process of building secure applications and designing efficient systems.
         </p>
 
         {/* Social Media Links */}
-        <div className="flex justify-center gap-8 mt-16">
+        <div className="flex justify-center gap-4 md:gap-8 mt-8 md:mt-16">
           <a
             href="https://github.com/vinkakniv"
             target="_blank"
@@ -69,28 +69,28 @@ export default function Hero() {
       </div>
 
       {/* Stats Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto">
-        <div className="glass-apple dark:glass-apple-dark rounded-apple-lg p-6 shadow-apple apple-card">
-          <div className="text-3xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mt-12 md:mt-20 max-w-4xl mx-auto">
+        <div className="glass-apple dark:glass-apple-dark rounded-apple-lg p-4 md:p-6 shadow-apple apple-card">
+          <div className="text-2xl md:text-3xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-1 md:mb-2">
             10+
           </div>
-          <div className="text-apple-gray-600 dark:text-apple-gray-400 font-medium">
+          <div className="text-sm md:text-base text-apple-gray-600 dark:text-apple-gray-400 font-medium">
             Projects Completed
           </div>
         </div>
-        <div className="glass-apple dark:glass-apple-dark rounded-apple-lg p-6 shadow-apple apple-card">
-          <div className="text-3xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-2">
+        <div className="glass-apple dark:glass-apple-dark rounded-apple-lg p-4 md:p-6 shadow-apple apple-card">
+          <div className="text-2xl md:text-3xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-1 md:mb-2">
             5+
           </div>
-          <div className="text-apple-gray-600 dark:text-apple-gray-400 font-medium">
+          <div className="text-sm md:text-base text-apple-gray-600 dark:text-apple-gray-400 font-medium">
             Programming Languages
           </div>
         </div>
-        <div className="glass-apple dark:glass-apple-dark rounded-apple-lg p-6 shadow-apple apple-card">
-          <div className="text-3xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-2">
+        <div className="glass-apple dark:glass-apple-dark rounded-apple-lg p-4 md:p-6 shadow-apple apple-card">
+          <div className="text-2xl md:text-3xl font-bold text-apple-blue-600 dark:text-apple-blue-400 mb-1 md:mb-2">
             2+
           </div>
-          <div className="text-apple-gray-600 dark:text-apple-gray-400 font-medium">
+          <div className="text-sm md:text-base text-apple-gray-600 dark:text-apple-gray-400 font-medium">
             Years Experience
           </div>
         </div>

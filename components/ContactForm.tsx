@@ -54,20 +54,19 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-24">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <h3 className="text-4xl md:text-5xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight">
-            Let's Chat! 💬
+    <section className="py-16 md:py-24">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+        <div className="text-center mb-12 md:mb-20 animate-fade-in-up">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-apple-gray-900 dark:text-white mb-4 md:mb-6 tracking-tight">
+            Let's Connect! 🤝
           </h3>
-          <p className="text-lg md:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto">
-            Got a cool project idea? Want to collaborate? Or just want to say hi? I'd love to hear from you!
+          <p className="text-base md:text-lg lg:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto px-4">
+            I'd love to hear from you! Whether you have a project in mind or just want to chat about tech.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto animate-slide-in">
-          <div className="glass-apple dark:glass-apple-dark p-8 rounded-apple-lg shadow-apple-lg">
-            <h4 className="text-2xl font-semibold mb-6 text-apple-blue-600 dark:text-apple-blue-400 tracking-tight">Send Message</h4>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto animate-slide-in">
+          <div className="glass-apple dark:glass-apple-dark p-6 md:p-8 rounded-apple-lg shadow-apple-lg">            <h4 className="text-2xl font-semibold mb-6 text-apple-blue-600 dark:text-apple-blue-400 tracking-tight">Send Message</h4>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-apple-gray-700 dark:text-apple-gray-300 mb-2">Name</label>
@@ -140,19 +139,19 @@ export default function ContactForm() {
             </form>
           </div>
           
-          <div className="glass-apple dark:glass-apple-dark p-8 rounded-apple-lg shadow-apple-lg">
-            <h4 className="text-2xl font-semibold mb-6 text-apple-blue-600 dark:text-apple-blue-400 tracking-tight">Contact Info</h4>
-            <div className="space-y-6">
+          <div className="glass-apple dark:glass-apple-dark p-6 md:p-8 rounded-apple-lg shadow-apple-lg">
+            <h4 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-apple-blue-600 dark:text-apple-blue-400 tracking-tight">Contact Info</h4>
+            <div className="space-y-4 md:space-y-6">
               <a 
                 href="mailto:vinka.aeris@gmail.com" 
-                className="apple-button group flex items-center gap-4 text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue-600 dark:hover:text-apple-blue-400 transition-all duration-300 p-4 rounded-apple hover:bg-apple-gray-100 dark:hover:bg-apple-dark-800 apple-focus"
+                className="apple-button group flex items-center gap-3 md:gap-4 text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue-600 dark:hover:text-apple-blue-400 transition-all duration-300 p-3 md:p-4 rounded-apple hover:bg-apple-gray-100 dark:hover:bg-apple-dark-800 apple-focus"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-apple-blue-100 dark:bg-apple-blue-900/30 rounded-apple flex items-center justify-center group-hover:bg-apple-blue-600 group-hover:text-white transition-all duration-300">
-                  <AiOutlineMail className="text-xl" />
+                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-apple-blue-100 dark:bg-apple-blue-900/30 rounded-apple flex items-center justify-center group-hover:bg-apple-blue-600 group-hover:text-white transition-all duration-300">
+                  <AiOutlineMail className="text-lg md:text-xl" />
                 </div>
                 <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-sm text-apple-gray-500 dark:text-apple-gray-400">vinka.aeris@gmail.com</p>
+                  <p className="font-medium text-sm md:text-base">Email</p>
+                  <p className="text-xs md:text-sm text-apple-gray-500 dark:text-apple-gray-400">vinka.aeris@gmail.com</p>
                 </div>
               </a>
               
@@ -160,14 +159,14 @@ export default function ContactForm() {
                 href="https://github.com/vinkakniv" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="apple-button group flex items-center gap-4 text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue-600 dark:hover:text-apple-blue-400 transition-all duration-300 p-4 rounded-apple hover:bg-apple-gray-100 dark:hover:bg-apple-dark-800 apple-focus"
+                className="apple-button group flex items-center gap-3 md:gap-4 text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue-600 dark:hover:text-apple-blue-400 transition-all duration-300 p-3 md:p-4 rounded-apple hover:bg-apple-gray-100 dark:hover:bg-apple-dark-800 apple-focus"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-apple-blue-100 dark:bg-apple-blue-900/30 rounded-apple flex items-center justify-center group-hover:bg-apple-blue-600 group-hover:text-white transition-all duration-300">
-                  <AiFillGithub className="text-xl" />
+                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-apple-blue-100 dark:bg-apple-blue-900/30 rounded-apple flex items-center justify-center group-hover:bg-apple-blue-600 group-hover:text-white transition-all duration-300">
+                  <AiFillGithub className="text-lg md:text-xl" />
                 </div>
                 <div>
-                  <p className="font-medium">GitHub</p>
-                  <p className="text-sm text-apple-gray-500 dark:text-apple-gray-400">vinkakniv</p>
+                  <p className="font-medium text-sm md:text-base">GitHub</p>
+                  <p className="text-xs md:text-sm text-apple-gray-500 dark:text-apple-gray-400">vinkakniv</p>
                 </div>
               </a>
               
@@ -175,14 +174,14 @@ export default function ContactForm() {
                 href="https://www.linkedin.com/in/vinka-alrezky-a-6b6a19245/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="apple-button group flex items-center gap-4 text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue-600 dark:hover:text-apple-blue-400 transition-all duration-300 p-4 rounded-apple hover:bg-apple-gray-100 dark:hover:bg-apple-dark-800 apple-focus"
+                className="apple-button group flex items-center gap-3 md:gap-4 text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue-600 dark:hover:text-apple-blue-400 transition-all duration-300 p-3 md:p-4 rounded-apple hover:bg-apple-gray-100 dark:hover:bg-apple-dark-800 apple-focus"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-apple-blue-100 dark:bg-apple-blue-900/30 rounded-apple flex items-center justify-center group-hover:bg-apple-blue-600 group-hover:text-white transition-all duration-300">
-                  <AiFillLinkedin className="text-xl" />
+                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-apple-blue-100 dark:bg-apple-blue-900/30 rounded-apple flex items-center justify-center group-hover:bg-apple-blue-600 group-hover:text-white transition-all duration-300">
+                  <AiFillLinkedin className="text-lg md:text-xl" />
                 </div>
                 <div>
-                  <p className="font-medium">LinkedIn</p>
-                  <p className="text-sm text-apple-gray-500 dark:text-apple-gray-400">Vinka Alrezky As</p>
+                  <p className="font-medium text-sm md:text-base">LinkedIn</p>
+                  <p className="text-xs md:text-sm text-apple-gray-500 dark:text-apple-gray-400">Vinka Alrezky As</p>
                 </div>
               </a>
             </div>

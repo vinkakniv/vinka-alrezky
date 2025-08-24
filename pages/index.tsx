@@ -94,19 +94,19 @@ export default function Home() {
       {/* Fixed Header */}
       <Header darkmode={darkmode} setDarkmode={setDarkmode} />
 
-      <main className="min-h-screen bg-apple-gray-50 dark:bg-apple-dark-900 px-6 md:px-12 lg:px-20 transition-colors duration-300 pt-20">
+      <main className="min-h-screen bg-apple-gray-50 dark:bg-apple-dark-900 px-4 md:px-6 lg:px-12 xl:px-20 transition-colors duration-300 pt-20">
         <section id="about" className="min-h-screen flex items-center">
           <Hero />
         </section>
           
           {/* Apple-style Feature Section */}
           <div 
-            className="flex justify-center items-center mt-16 mb-32 scroll-animate"
+            className="flex justify-center items-center mt-8 md:mt-16 mb-16 md:mb-32 scroll-animate px-4"
             style={{ opacity: 0, transform: 'translateY(30px)', transition: 'all 0.6s ease-out' }}
           >
             <div className="relative max-w-4xl w-full">
               {/* Main Feature Card */}
-              <div className="glass-apple dark:glass-apple-dark rounded-apple-xl p-12 shadow-apple-xl apple-card">
+              <div className="glass-apple dark:glass-apple-dark rounded-apple-xl p-6 md:p-12 shadow-apple-xl apple-card">
                 <div className="text-center">
                   <div className="mb-8">
                     <div className="w-32 h-32 mx-auto bg-gradient-to-br from-apple-blue-400 to-apple-blue-600 rounded-apple-xl flex items-center justify-center shadow-apple-lg">

@@ -99,34 +99,34 @@ export default function Experience() {
   ];
 
   return (
-    <section className="py-24">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <h3 className="text-4xl md:text-5xl font-bold text-apple-gray-900 dark:text-white mb-6 tracking-tight">
+    <section className="py-16 md:py-24">
+      <div className="max-w-5xl mx-auto px-4 md:px-6">
+        <div className="text-center mb-16 md:mb-20 animate-fade-in-up">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-apple-gray-900 dark:text-white mb-4 md:mb-6 tracking-tight">
             Get to Know Me! 👋
           </h3>
-          <p className="text-lg md:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-3xl mx-auto px-4">
             Every step of my journey has shaped who I am today. Let me share my story with you!✨
           </p>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-apple-blue-500 to-apple-blue-600 transform md:-translate-x-px"></div>
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-apple-blue-500 to-apple-blue-600 transform md:-translate-x-px"></div>
           
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
               <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 {/* Timeline dot */}
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-apple-blue-600 rounded-full border-4 border-white dark:border-apple-dark-900 shadow-apple transform md:-translate-x-1/2 z-10"></div>
+                <div className="absolute left-4 md:left-1/2 w-3 h-3 md:w-4 md:h-4 bg-apple-blue-600 rounded-full border-2 md:border-4 border-white dark:border-apple-dark-900 shadow-apple transform md:-translate-x-1/2 z-10"></div>
                 
                 {/* Content */}
-                <div className={`glass-apple dark:glass-apple-dark rounded-apple-lg p-8 shadow-apple hover:shadow-apple-lg transition-all duration-300 ml-16 md:ml-0 w-full ${index % 2 === 0 ? 'md:mr-8 md:w-5/12' : 'md:ml-8 md:w-5/12'} apple-card`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-apple-blue-100 dark:bg-apple-blue-900/30 text-apple-blue-600 dark:text-apple-blue-400 rounded-apple text-sm font-semibold">
+                <div className={`glass-apple dark:glass-apple-dark rounded-apple-lg p-4 md:p-8 shadow-apple hover:shadow-apple-lg transition-all duration-300 ml-10 md:ml-0 w-full ${index % 2 === 0 ? 'md:mr-8 md:w-5/12' : 'md:ml-8 md:w-5/12'} apple-card`}>
+                  <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                    <span className="px-2 md:px-3 py-1 bg-apple-blue-100 dark:bg-apple-blue-900/30 text-apple-blue-600 dark:text-apple-blue-400 rounded-apple text-xs md:text-sm font-semibold">
                       {exp.year}
                     </span>
-                    <span className={`px-3 py-1 rounded-apple text-xs font-medium ${
+                    <span className={`px-2 md:px-3 py-1 rounded-apple text-xs font-medium ${
                       exp.type === 'work' 
                         ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'
                         : exp.type === 'education'
@@ -144,16 +144,16 @@ export default function Experience() {
                        : '🏠 Personal'}
                     </span>
                   </div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-2xl">{exp.icon}</span>
-                    <h4 className="text-xl font-bold text-apple-gray-900 dark:text-white">
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <span className="text-lg md:text-2xl">{exp.icon}</span>
+                    <h4 className="text-lg md:text-xl font-bold text-apple-gray-900 dark:text-white leading-tight">
                       {exp.title}
                     </h4>
                   </div>
-                  <p className="text-apple-blue-600 dark:text-apple-blue-400 font-semibold mb-3">
+                  <p className="text-apple-blue-600 dark:text-apple-blue-400 font-semibold mb-2 md:mb-3 text-sm md:text-base">
                     {exp.company}
                   </p>
-                  <p className="text-apple-gray-600 dark:text-apple-gray-300 leading-relaxed">
+                  <p className="text-apple-gray-600 dark:text-apple-gray-300 leading-relaxed text-sm md:text-base">
                     {exp.description}
                   </p>
                 </div>
