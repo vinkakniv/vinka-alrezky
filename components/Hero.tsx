@@ -36,9 +36,7 @@ export default function Hero() {
           Tech Enthusiast
         </h3>
         <p className="text-base md:text-lg lg:text-xl text-apple-gray-600 dark:text-apple-gray-400 leading-relaxed max-w-4xl mx-auto mb-8 md:mb-12 font-normal px-4 md:px-0">
-          I'm a Computer Science student at Universitas Indonesia who loves working with code. 
-          I focus on software development and system analysis, 
-          enjoying the process of building secure applications and designing efficient systems.
+          I'm a Computer Science student with strong interest in software security, system analysis, and product development. Skilled in translating business requirements into technical solutions, managing projects, and implementing secure, reliable systems. Actively engaged in teaching assistance and mentoring, fostering peer learning and collaboration in technical subjects. Also involved in social impact projects, applying technology and leadership skills to support education and community empowerment initiatives.
         </p>
 
         {/* Social Media Links */}
